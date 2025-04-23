@@ -12,7 +12,7 @@ func main() {
 	for _, taxRate := range taxRates {
 		cmd := cmd.New()
 		priceJob := prices.NewTaxIncludedPriceJob(cmd, taxRate)
-		priceJob.Process()
+		err := priceJob.Process()
 
 		if err != nil {
 			fmt.Println("Could not process job")
